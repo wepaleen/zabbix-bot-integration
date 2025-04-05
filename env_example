@@ -1,0 +1,7 @@
+BOT_TOKEN=
+ADMIN_IDS=
+
+# Zabbix settings
+ZABBIX_URL=https://your_zabbix/api_jsonrpc.php
+ZABBIX_USER=
+ZABBIX_PASSWORD=
