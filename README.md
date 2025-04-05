@@ -18,7 +18,7 @@
 1. Клонируйте репозиторий:
 ```bash
 git clone <repository-url>
-cd zabbix-telegram-bot
+cd zabbix-bot-integration
 ```
 
 2. Установите зависимости:
@@ -72,19 +72,6 @@ docker-compose down
 
 В Telegram доступны следующие команды:
 - `/start` - начало работы с ботом
-- `/problems` - показать все активные проблемы
-- `/unacknowledged` - показать неподтвержденные события
-- `/help` - показать справку
+- `/set_duty` - установить дежурного смены
 
-## Настройка
 
-В файле `config.py` можно настроить следующие параметры:
-- `EVENT_CHECK_INTERVAL` - интервал проверки новых событий (в секундах)
-- `EVENT_REMINDER_INTERVAL` - интервал напоминаний о неподтвержденных событиях (в секундах)
-
-## Требования
-
-- Python 3.7+ (для локальной установки)
-- Docker и Docker Compose (для запуска в контейнере)
-- Доступ к API Zabbix
-- Telegram Bot Token 
