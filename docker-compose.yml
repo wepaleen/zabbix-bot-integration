@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: zabbix-bot-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  zabbix-telegram-bot:
+    build: .
+    container_name: zabbix-telegram-bot
+    restart: unless-stopped
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - .:/app
+    env_file:
+      - .env 
